@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Flashcard from './flashcard'; //is this the right path?? folder??
-import FlashcardEvent from './flashcardEvent'
+import FlashcardEvent from './flashcardEvent';
+import ProvidedTasks from './providedTasks'
 
 // Initialize Firebase
 var config = {
@@ -29,6 +30,7 @@ class App extends React.Component {
         displayedTask: {}
       }
       this.updateFlashcard = this.updateFlashcard.bind(this);  
+      this.toggleCompleted = this.toggleCompleted.bind(this);
       
     }
 
@@ -44,6 +46,14 @@ class App extends React.Component {
     componentDidMount() {
     const displayedTasks = this.state.tasks;
     const dbref = firebase.database().ref('/tasks');
+
+    dbref.on('value', (snapshot) => {
+      // console.log(snapshot.val());
+      this.setState({
+        tasks: snapshot.val()
+      })
+
+    });
     }
 
     // dbref.on()
@@ -53,6 +63,7 @@ class App extends React.Component {
     // Do I need a different method here. on click?
     clickedTask(displayedTasks) {
       const task = displayedTasks[Math.floor(Math.random()*displayedTasks.length)];
+      console.log(task);
       return(task);
     } 
 
@@ -64,6 +75,15 @@ class App extends React.Component {
       })
     }
 
+    toggleCompleted(id){
+      // console.log(id);
+      const checklistItemCompletion = this.state.tasks[id];
+      console.log(checklistItemCompletion)
+
+      const dbref = firebase.database().ref(`/tasks/${id}`);
+      
+    }
+
     render() {
       return (
         <div>
@@ -73,14 +93,17 @@ class App extends React.Component {
             <FlashcardEvent showFlashcard={this.updateFlashcard}/>
           </header>
           <main>
-          {/* <section>
+              <ul className="providedTasks">
+                {this.state.tasks.map((task) => {
+                  return (
+                    <ProvidedTasks data={task} key={task.id} toggleCompleted={this.toggleCompleted}/>
+                  )
 
-            <ul>
-              {this.state.tasks.map((imageTask) => {
-                <li>{imageTask}</li>
-              })}
-            </ul>
-          </section> */}
+                })}
+              </ul>
+              <ul className="addedTasks">
+
+              </ul>
           </main>
         </div>
       )
