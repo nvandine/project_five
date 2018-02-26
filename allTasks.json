@@ -1,0 +1,106 @@
+{
+    "tasks": [
+        {
+            "id": 0,
+            "name": "declaring language for site",
+            "description": "HTML: Allows search engines to properly index your site, as it allows assistive technologies to provide the correct responses to the content.", 
+            "completed": false
+        },
+        {   
+            "id": 1,
+            "name": "semantic elements: structure",
+            "description": "HTML landmark structural elements are semantic - header, footer, aside, article, only one 'main' per page.",
+            "completed": false
+        },
+        {
+            "id": 2,
+            "name": "semantic elements: details",
+            "description": "HTML: H1 - H6 headings have semantic meaning, are used only for headings, are used in the right order, only one H1 per page, usage of <em>, <strong,> when needed",
+            "completed": false
+        },
+        {
+            "id": 3,
+            "name": "Images in HTML",
+            "description": "HTML: There is an alt attribute provided that is descriptive of the image if the image has a functional role/value. Important words in images are text.",
+            "completed": false
+        },
+        {
+            "id": 4,
+            "name": "background image aesthetic only ",
+            "description": "HTML & CSS: Background image is for aesthetics and does not matter for the content of your page - otherwise use HTML img",
+            "completed": false
+        },
+        {
+            "id": 5,
+            "name": "icons",
+            "description": "if icons are semantic, they have a text alternative, and even a title attached that describe the function for screen readers",
+            "completed": false
+        },
+        {
+            "id": 6,
+            "name": "animations",
+            "description": "user can turn off or reduce the motion in animations",
+            "completed": false
+        },
+        {
+            "id": 7,
+            "name": "text contrast",
+            "description": "there is a text-to-background-colour contrast ratio of 4.5: 1 for normal text and 3: 1 for large text ",
+            "completed": false
+        },
+        {   
+            "id": 8,
+            "name": "buttons",
+            "description": "There is an alt-tag provided that is descriptive of the image, particularly if the image has a functional role",
+            "completed": false
+        },
+        {
+            "id": 9,
+            "name": ":hover :focus",
+            "description": "all :hover on links are paired with :focus",
+            "completed": false
+        },
+        {
+            "id": 10,
+            "name": "input types",
+            "description": "all input types are specific to their functionality (text, submit, email, phone-number",
+            "completed": false
+        },
+        {   
+            "id": 11,
+            "name": "labels for inputs",
+            "description": "all inputs have a label -hidden is fine- associated with 'for' REPHRASE THIS ",
+            "completed": false
+        },
+        {
+            "id": 12,
+            "name": "use of uppercase",
+            "description": "placeholder12 description",
+            "completed": false
+        },
+        {
+            "id": 13,
+            "name": "flexbox order",
+            "description": "placeholder13 description",
+            "completed": false
+        },
+        {
+            "id": 14,
+            "name": "multimedia requirements",
+            "description": "placeholder14 description",
+            "completed": false
+        },
+        {
+            "id": 15,
+            "name": "iframes - embedded media",
+            "description": "placeholder15 description",
+            "completed": false
+        }
+
+    ]
+}
+
+
+
+
+
