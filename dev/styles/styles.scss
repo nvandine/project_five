@@ -1,13 +1,44 @@
 @import "partials/setup";
 @import "components/flashcard";
 
+* {
+    margin: 0;
+    padding: 0;
+}
 
 html {
-    font-family: 'Karla', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 10px;
+    color: #00269c;
 }
 body {
     background-color: #f4f2f8;
     // background-color: white;
+}
+
+main {
+    padding: 0px 0px 50px 0px;
+}
+
+h1 {
+    font-size: 6rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 200px;
+}
+
+h3 {
+    font-size: 2.1rem;
+    margin: 50px auto 20px;
+    padding: 15px;
+    border: 5px dotted #6278ff;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+span {
+    color: #6278ff;
 }
 
 header {
@@ -17,8 +48,16 @@ header {
     justify-content: center;
 }
 
+
+
+.subhead {
+    margin-left: 600px;
+
+}
+
 .wrapper {
     width: 1180px;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -28,11 +67,66 @@ header {
     justify-content: space-around;
 }
 
-.providedTasksContainer {
-    // border: 1px solid red;
+.providedTasksContainer p {
+    font-family: 'Montserrat',sans-serif;
 }
 
 li {
     list-style: none;
     text-align: center;
+}
+
+button {
+    background-color: #6278ff;
+    height: 70px;
+    width: 70px;
+    color: white;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    padding: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover,
+button:focus {
+    transform: scale(1.2);
+}
+
+/* MEDIA QUERIES */
+
+/* Portrait tablet and small desktops */
+
+@media (max-width: 940px) {
+    h1 {
+        padding: 15px 5px 10px;
+        font-size: 4rem;
+    }
+
+    .subhead {
+        margin-left: 300px;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+    
+}
+
+/* Landscape phone to portrait tablet */
+
+@media (max-width: 767px) {}
+    h1 {
+        font-size: 3rem;
+    }
+/* Portrait phones and down */
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.6rem;
+        margin: 0 auto;
+    }
+
+    .subhead {
+        margin: 0 auto;
+    }
 }

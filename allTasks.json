@@ -2,105 +2,120 @@
     "tasks": [
         {
             "id": 0,
-            "name": "declaring language for site",
-            "description": "HTML: Allows search engines to properly index your site, as it allows assistive technologies to provide the correct responses to the content.", 
+            "name": "HTML: declaring language for site",
+            "description": "allows search engines to properly index your site; allows assistive technologies to pronounce content accurately", 
             "completed": false
         },
         {   
             "id": 1,
-            "name": "semantic elements: structure",
-            "description": "HTML landmark structural elements are semantic - header, footer, aside, article, only one 'main' per page.",
+            "name": "HTML: semantic elements: structure",
+            "description": "landmark structural elements are semantic: e.g.header, footer, aside, only one 'main' per page",
             "completed": false
         },
         {
             "id": 2,
-            "name": "semantic elements: details",
-            "description": "HTML: H1 - H6 headings have semantic meaning, are used only for headings, are used in the right order, only one H1 per page, usage of <em>, <strong,> when needed",
+            "name": "HTML: semantic elements: headings",
+            "description": "H1 - H6 headings have semantic meaning, are used only for headings, are used in the right order, only one H1 per page",
             "completed": false
         },
         {
             "id": 3,
-            "name": "Images in HTML",
-            "description": "HTML: There is an alt attribute provided that is descriptive of the image if the image has a functional role/value. Important words in images are text.",
+            "name": "HTML: <em> and <strong> ",
+            "description": "used for screen readers to stress emphasis and importance, not used stylistically",
             "completed": false
         },
         {
             "id": 4,
-            "name": "background image: aesthetic",
-            "description": "HTML & CSS: Background image is for aesthetics and does not matter for the content of your page - otherwise use HTML img",
+            "name": "HTML: the \"alt\" attribute",
+            "description": "a descriptive text alternative is provided for images, esp. important when image has functional role",
             "completed": false
         },
         {
             "id": 5,
-            "name": "icons",
-            "description": "if icons are semantic, they have a text alternative, and even a title attached that describe the function for screen readers",
+            "name": "HTML: words in/on images",
+            "description": "best practice to use real text layered on images, because text within graphics loses readability when zoomed-in",
             "completed": false
         },
         {
             "id": 6,
-            "name": "animations",
-            "description": "user can turn off or reduce the motion in animations",
+            "name": "HTML & CSS: background images",
+            "description": "background image is decorative and not functional - otherwise use HTML img",
             "completed": false
         },
         {
             "id": 7,
-            "name": "text contrast",
-            "description": "there is a text-to-background-colour contrast ratio of 4.5: 1 for normal text and 3: 1 for large text ",
+            "name": "HTML: icons",
+            "description": "if icons convey meaning (e.g. twitter link), there is text-based context (e.g. visually hidden  + span",
             "completed": false
         },
-        {   
+        {
             "id": 8,
-            "name": "buttons",
-            "description": "There is an alt-tag provided that is descriptive of the image, particularly if the image has a functional role",
+            "name": "CSS  :hover & :focus",
+            "description": "all :hover selectors on links are paired with a :focus selector for keyboard users",
             "completed": false
         },
         {
             "id": 9,
-            "name": ":hover :focus",
-            "description": "all :hover on links are paired with :focus",
+            "name": "CSS: text contrast",
+            "description": "text-to-background-colour contrast ratio is 4.5:1 for normal text and 3:1 for large text ",
             "completed": false
         },
         {
             "id": 10,
-            "name": "input types",
-            "description": "all input types are specific to their functionality (text, submit, email, phone-number",
+            "name": "CSS: font size",
+            "description": "avoid small fonts sizes, use relative units (rems) for sizing",
             "completed": false
         },
         {   
             "id": 11,
-            "name": "labels for inputs",
-            "description": "all inputs have a label -hidden is fine- associated with 'for' REPHRASE THIS ",
+            "name": "CSS: UPPERCASE font choice",
+            "description": "limit use of uppercase (screen-readers can misinterpret and readability is limited), apply uppercase using CSS not HTML",
             "completed": false
         },
         {
             "id": 12,
-            "name": "use of uppercase",
-            "description": "placeholder12 description",
+            "name": "CSS fonts & styles",
+            "description": "limit the number of fonts for readability (i.e. 2 or 3), avoid blinking, moving or over-animated text",
             "completed": false
         },
         {
             "id": 13,
-            "name": "flexbox order",
-            "description": "placeholder13 description",
+            "name": "HTML: skip to main",
+            "description": "provide a link at page start to bypass top content (e.g. lengthy navs) to skip to main content ",
             "completed": false
         },
         {
             "id": 14,
-            "name": "multimedia requirements",
-            "description": "placeholder14 description",
+            "name": "HTML: logical forms",
+            "description": "all input types in forms are specific to their functionality (e.g.text, submit, email, password)",
+            "completed": false
+        },
+        {   
+            "id": 15,
+            "name": "HTML: labels in forms",
+            "description": "all form inputs have a corresponding label to describe function in standard position (or visually hidden)",
             "completed": false
         },
         {
-            "id": 15,
-            "name": "iframes - embedded media",
-            "description": "placeholder15 description",
+            "id": 16,
+            "name": "HTML: buttons vs links",
+            "description": "<button> is used functionally; <a> is reserved for links. They respond differently to keyboard events",
+            "completed": false
+        },
+        {
+            "id": 17,
+            "name": "HTML & CSS: flexbox order",
+            "description": "if flexbox order used to change visual order, note it does not change the order in which it is screen-read",
+            "completed": false
+        },
+        {
+            "id": 18,
+            "name": "multimedia requirements",
+            "description": "Video or audio requires transcripts; audio descriptions and captioning if possible",
             "completed": false
         }
-
     ]
 }
-
-
 
 
 

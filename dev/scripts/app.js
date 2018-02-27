@@ -28,7 +28,10 @@ class App extends React.Component {
       super (props);
       this.state = {
         tasks: [],
-        displayedTask: {},
+        displayedTask: {
+          name: "Accessibility Flashcard: click below to draw a random card",
+          description: "Find more information on the back"
+        },
         task: ""
       }
       // this.handleChange = this.handleChange.bind(this);
@@ -110,7 +113,11 @@ class App extends React.Component {
     // }
 
     // create function and call it in toggleCompleted
-  
+    // changeCardColor(id){
+    //   return (){
+    //     <div className={this.props.className} onClick {this.props.toggleClassName}>
+    //   }
+    // }
 
     toggleCompleted(id){
       // console.log(id);
@@ -130,9 +137,12 @@ class App extends React.Component {
       return (
         <div>
           <header>
-            <h1>Natalie Tries Things</h1>
+            <h1> <span className="titleFont">Accessibility </span>Checklist</h1>
+            <p className="subhead">A starter guide to creating a barrier-free experience</p>
+            <h3>Still learning? Draw a random flashcard to practice</h3>
             <Flashcard name={this.state.displayedTask.name} description={this.state.displayedTask.description}/>
             <FlashcardEvent showFlashcard={this.updateFlashcard}/>
+            <h3>Project-Ready? Check the tasks when complete</h3>
           </header>
           <main className="wrapper">
               <ul className="providedTasks">
