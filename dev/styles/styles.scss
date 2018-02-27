@@ -26,20 +26,30 @@ h1 {
     margin-right: 200px;
 }
 
+.learning {
+    margin: 50px auto 20px;
+    padding: 40px;
+    border: 1.5px solid #6278ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 h3 {
     font-size: 2.1rem;
-    margin: 50px auto 20px;
-    padding: 15px;
-    border: 5px dotted #6278ff;
+    margin: 20px auto;
+    // padding: 40px;
+    // border: 1.5px solid  #6278ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
 }
 
 p {
     font-size: 1.6rem;
 }
 
-span {
-    color: #6278ff;
-}
 
 header {
     display: flex;
@@ -49,10 +59,13 @@ header {
 }
 
 
-
 .subhead {
     margin-left: 600px;
+    color: #6278ff;
+}
 
+.question {
+    font-weight: 500;
 }
 
 .wrapper {

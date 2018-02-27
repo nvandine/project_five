@@ -139,10 +139,12 @@ class App extends React.Component {
           <header>
             <h1> <span className="titleFont">Accessibility </span>Checklist</h1>
             <p className="subhead">A starter guide to creating a barrier-free experience</p>
-            <h3>Still learning? Draw a random flashcard to practice</h3>
-            <Flashcard name={this.state.displayedTask.name} description={this.state.displayedTask.description}/>
-            <FlashcardEvent showFlashcard={this.updateFlashcard}/>
-            <h3>Project-Ready? Check the tasks when complete</h3>
+            <div className="learning">
+              <h3><span className="question">Still learning? </span>Draw a random flashcard to practice</h3>
+              <Flashcard name={this.state.displayedTask.name} description={this.state.displayedTask.description}/>
+              <FlashcardEvent showFlashcard={this.updateFlashcard}/>
+            </div>
+            <h3><span className="question">Project-Ready? </span> Check the tasks when complete</h3>
           </header>
           <main className="wrapper">
               <ul className="providedTasks">
