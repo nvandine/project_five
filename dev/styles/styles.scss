@@ -114,10 +114,11 @@ button:focus {
 
 /* Landscape phone to portrait tablet */
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
     h1 {
         font-size: 3rem;
     }
+}
 /* Portrait phones and down */
 
 @media (max-width: 480px) {
