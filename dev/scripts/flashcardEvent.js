@@ -14,7 +14,7 @@ class FlashcardEvent extends React.Component {
     render(props){
         return(
             <div>
-                <button className="taskButton" onClick={this.showFlashcard}>Learn More</button>
+                <button className="taskButton" onClick={this.showFlashcard}>Get Random Flashcard</button>
             </div>
         )
     }

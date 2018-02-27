@@ -10,11 +10,11 @@ import React from 'react';
 const Flashcard = (props) => (
     <div className="flashcardContainer">
         <div className="flashcard">
-            <div className="cardname">
-                <div className="taskShort">{props.name}</div>
+            <div className="cardName innerBorder">
+                <p className="taskShort">{props.name}</p>
             </div>
-            <div className="cardDescription">
-                <div className="taskLong">{props.description}</div>
+            <div className="cardDescription innerBorder">
+                <p className="taskLong">{props.description}</p>
             </div>
         </div>
     </div>

@@ -1,17 +1,9 @@
 import React from 'react';
+import Flashcard from './flashcard'
 
 const ProvidedTasks = (props) => (
-    <li className="ProvidedTasksContainer">
-        <div className="flashcardContainer">
-            <div className="flashcard">
-                <div className="cardname">
-                    <div className="taskShort">{props.data.name}</div>
-                </div>
-                <div className="cardDescription">
-                    <div className="taskLong">{props.data.description}</div>
-                </div>
-            </div>
-        </div>
+    <li className="providedTasksContainer">
+        <Flashcard name={props.data.name} description={props.data.description}/>
         <p>{props.data.name}
             <input type="checkbox"
             onChange={() => props.toggleCompleted(props.data.id)} 

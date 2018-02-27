@@ -1,38 +1,13 @@
-<section>
-    <div>
-        <ul>
 
-        </ul>
-        <ul className="addedTasks">
+    import React from 'react';
 
-        </ul>
+    const AddedTasks = (props) => (
         <form onSubmit={this.addTask} className="form1">
             <label htmlFor="task">Accessibility Task</label>
-            <input type="text" name="task" onChange={this.handleChange} />
+            <input type="text" name="task" value={this.state.name} onChange={this.handleCardChange} id="name" />
+            <input type="submit" value="Add Accessibility Task" />
         </form>
-    </div>
-    <div>
-        <ul>
 
-        </ul>
-        <ul className="addedTasks">
+    )
 
-        </ul>
-        <form form onSubmit={this.addItem} className="form2">
-            <label htmlFor="task">Accessibility Task</label>
-            <input type="text" name="task" onChange={this.handleChange} />
-        </form>
-    </div>
-    <div>
-        <ul>
-
-        </ul>
-        <ul className="addedTasks">
-
-        </ul>
-        <form form onSubmit={this.addItem} className="form3">
-            <label htmlFor="task">Accessibility Task</label>
-            <input type="text" name="task" onChange={this.handleChange} />
-        </form>
-    </div>
-</section>
+    export default AddedTasks

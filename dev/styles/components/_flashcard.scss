@@ -1,0 +1,71 @@
+
+.flashcardContainer {
+    max-width: 200px;
+    margin: 15px;
+    .flashcard {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        // border-radius: 25px;
+        perspective: 800px;
+        transform-style: preserve-3d;
+        // box-shadow: 0px 0px 15px 3px;
+    }
+    .cardName,
+    .cardDescription {
+        position: absolute;
+        border-radius: 25px;
+        height: 100%;
+        width: 100%;
+        transition: all 0.4s ease-in-out;
+        backface-visibility:hidden;
+        text-align: center;
+        outline: 3px solid #114dce;
+        outline-offset: -10px;
+        -moz-outline-radius: 25px;
+        box-shadow: 5px 5px 10px #ccc;
+    }
+}
+
+// .innerBorder {
+//     border: 10px solid white;
+//     box-shadow: inset 0px 0px 0px 3px #114dce;
+//     // z-index: 10;
+// }
+
+.flashcard p {
+    letter-spacing: 1px;
+}
+
+.taskShort,
+.taskLong {
+    color: #114dce;
+    padding: 10px;
+}
+
+
+.cardName {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardDescription {
+    background:white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.flashcard:hover .cardDescription,
+.flashcard:focus .cardDescription {
+    transform:rotateY(0);
+}
+
+.flashcard:hover .cardName,
+.flashcard:focus .cardName {
+    transform:rotateY(-180deg);
+}

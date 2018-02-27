@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Flashcard from './flashcard'; //is this the right path?? folder??
+import Flashcard from './flashcard'; 
 import FlashcardEvent from './flashcardEvent';
-import ProvidedTasks from './providedTasks'
+import ProvidedTasks from './providedTasks';
+import AddedTasks from './addedTasks';
 
 // Initialize Firebase
 var config = {
@@ -27,12 +28,22 @@ class App extends React.Component {
       super (props);
       this.state = {
         tasks: [],
-        displayedTask: {}
+        displayedTask: {},
+        task: ""
       }
+      this.handleChange = this.handleChange.bind(this);
+      this.addTask = this.addTask.bind(this);
       this.updateFlashcard = this.updateFlashcard.bind(this);  
       this.toggleCompleted = this.toggleCompleted.bind(this);
       
     }
+
+    handleChange(e){
+      this.setState({
+        task: e.target.value
+      });
+    }
+
 
     handleCardChange(e){
     this.setState({
@@ -57,7 +68,7 @@ class App extends React.Component {
     }
 
     // dbref.on()
-  
+    
     
     // event handler?
     // Do I need a different method here. on click?
@@ -75,6 +86,25 @@ class App extends React.Component {
       })
     }
 
+    addTask(e) {
+      e.preventDefault();
+      const newTask = {
+        name: this.state.name,
+        description: this.state.description,
+        completed: false
+      }
+      const dbref = firebase.database().ref('/tasks');
+      dbref.push(newtask);
+
+      this.setState({
+        name: '',
+        description: ''
+      });
+    }
+
+    // create function and call it in toggleCompleted
+  
+
     toggleCompleted(id){
       // console.log(id);
       const checklistItemCompletion = this.state.tasks[id];
@@ -82,6 +112,10 @@ class App extends React.Component {
 
       const dbref = firebase.database().ref(`/tasks/${id}`);
       
+      checklistItemCompletion.completed = checklistItemCompletion.completed === true ? false : true;
+      delete checklistItemCompletion[id];
+      dbref.set(checklistItemCompletion);
+      console.log(checklistItemCompletion);
     }
 
     render() {
@@ -92,18 +126,18 @@ class App extends React.Component {
             <Flashcard name={this.state.displayedTask.name} description={this.state.displayedTask.description}/>
             <FlashcardEvent showFlashcard={this.updateFlashcard}/>
           </header>
-          <main>
+          <main className="wrapper">
               <ul className="providedTasks">
                 {this.state.tasks.map((task) => {
                   return (
                     <ProvidedTasks data={task} key={task.id} toggleCompleted={this.toggleCompleted}/>
                   )
-
                 })}
               </ul>
-              <ul className="addedTasks">
-
-              </ul>
+                  {this.state.tasks.map((task, i) => {
+                    return <li key={`task-${i}`}>{task}</li>
+                  })}
+                    {/* <AddedTasks data={task} key={task.id} toggleCompleted = {this.toggleCompleted} /> */}
           </main>
         </div>
       )
