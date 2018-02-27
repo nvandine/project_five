@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import Flashcard from './flashcard'; 
 import FlashcardEvent from './flashcardEvent';
 import ProvidedTasks from './providedTasks';
-import AddedTasks from './addedTasks';
+// import NewTaskForm from './newTaskForm'
+// import AddedTasks from './addedTasks';
 
 // Initialize Firebase
 var config = {
@@ -19,7 +20,6 @@ firebase.initializeApp(config);
 //Create a checklist that helps users doing an HTML/CSS project track how accessible it is
 //Use flashcards to show description of task in more detail (firebase)
 //Create inputs for users to add their own notes/checklist items
-//Allow users to delete the added notes/checklist items
 //Connect the list of tasks to firebase in separate json file
 
 
@@ -31,18 +31,19 @@ class App extends React.Component {
         displayedTask: {},
         task: ""
       }
-      this.handleChange = this.handleChange.bind(this);
-      this.addTask = this.addTask.bind(this);
+      // this.handleChange = this.handleChange.bind(this);
+      // this.addTask = this.addTask.bind(this);
       this.updateFlashcard = this.updateFlashcard.bind(this);  
       this.toggleCompleted = this.toggleCompleted.bind(this);
       
     }
 
-    handleChange(e){
-      this.setState({
-        task: e.target.value
-      });
-    }
+    // handleChange(e){
+    //   this.setState({
+    //     // task: e.target.value
+    //     [e.target.name]: e.target.value
+    //   });
+    // }
 
 
     handleCardChange(e){
@@ -86,21 +87,27 @@ class App extends React.Component {
       })
     }
 
-    addTask(e) {
-      e.preventDefault();
-      const newTask = {
-        name: this.state.name,
-        description: this.state.description,
-        completed: false
-      }
-      const dbref = firebase.database().ref('/tasks');
-      dbref.push(newtask);
+    // addTask(e) {
+    //   e.preventDefault();
+    //   const taskState = Array.from(this.state.tasks); 
+    //   taskState.push(this.state.task);
+    //   this.setState({
+    //     tasks: taskState,
+    //     task: "",
+    //   });
+    //   // const newTask = {
+    //   //   name: this.state.name,
+    //   //   description: this.state.description,
+    //   //   completed: false
+    //   // }
+    //   // const dbref = firebase.database().ref('/tasks');
+    //   // dbref.push(newtask);
 
-      this.setState({
-        name: '',
-        description: ''
-      });
-    }
+    //   // this.setState({
+    //   //   name: '',
+    //   //   description: ''
+    //   // });
+    // }
 
     // create function and call it in toggleCompleted
   
@@ -118,6 +125,7 @@ class App extends React.Component {
       console.log(checklistItemCompletion);
     }
 
+
     render() {
       return (
         <div>
@@ -133,15 +141,27 @@ class App extends React.Component {
                     <ProvidedTasks data={task} key={task.id} toggleCompleted={this.toggleCompleted}/>
                   )
                 })}
+              {/* <div>
+                <form onSubmit={this.addTask}>
+                  <input type="text" name="task" value={this.state.task} onChange={this.handleChange} />
+                  <button>Add New Accessibility Task</button>
+                </form>
+              </div> */}
               </ul>
-                  {this.state.tasks.map((task, i) => {
-                    return <li key={`task-${i}`}>{task}</li>
-                  })}
+                  {/* {this.state.tasks.map((task, i) => {
+                    return <AddedTask data={task} key={`task-${i}`}/>
+                  })} */}
                     {/* <AddedTasks data={task} key={task.id} toggleCompleted = {this.toggleCompleted} /> */}
           </main>
         </div>
       )
     }
 }
+
+// const AddedTask = (props) => {
+//   return (
+//     <li>{props.data}</li> 
+//   );
+// }
 
 ReactDOM.render(<App />, document.getElementById('app'));

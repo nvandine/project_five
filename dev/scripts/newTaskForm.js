@@ -8,8 +8,8 @@ class NewTaskForm extends React.Component {
 
     render(){
         return(
-            <form>
-                <input type="text" name="task" value={this.state.task}/>
+            <form onSubmit={this.addTask}>
+                <input type="text" name="task" value={this.state.task} onChange={this.handleChange}/>
                 <button>Add New Accessibility Task</button>
             </form>
         )
