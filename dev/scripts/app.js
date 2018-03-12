@@ -63,7 +63,6 @@ class App extends React.Component {
     const dbref = firebase.database().ref('/tasks');
 
     dbref.on('value', (snapshot) => {
-      // console.log(snapshot.val());
       this.setState({
         tasks: snapshot.val()
       })
@@ -71,11 +70,7 @@ class App extends React.Component {
     });
     }
 
-    // dbref.on()
-    
-    
-    // event handler?
-    // Do I need a different method here. on click?
+
     clickedTask(displayedTasks) {
       const task = displayedTasks[Math.floor(Math.random()*displayedTasks.length)];
       console.log(task);
@@ -90,37 +85,8 @@ class App extends React.Component {
       })
     }
 
-    // addTask(e) {
-    //   e.preventDefault();
-    //   const taskState = Array.from(this.state.tasks); 
-    //   taskState.push(this.state.task);
-    //   this.setState({
-    //     tasks: taskState,
-    //     task: "",
-    //   });
-    //   // const newTask = {
-    //   //   name: this.state.name,
-    //   //   description: this.state.description,
-    //   //   completed: false
-    //   // }
-    //   // const dbref = firebase.database().ref('/tasks');
-    //   // dbref.push(newtask);
-
-    //   // this.setState({
-    //   //   name: '',
-    //   //   description: ''
-    //   // });
-    // }
-
-    // create function and call it in toggleCompleted
-    // changeCardColor(id){
-    //   return (){
-    //     <div className={this.props.className} onClick {this.props.toggleClassName}>
-    //   }
-    // }
 
     toggleCompleted(id){
-      // console.log(id);
       const checklistItemCompletion = this.state.tasks[id];
       console.log(checklistItemCompletion)
 
@@ -131,6 +97,18 @@ class App extends React.Component {
       dbref.set(checklistItemCompletion);
       console.log(checklistItemCompletion);
     }
+
+  toggleConsidered(id) {
+    const checklistItemCompletion = this.state.tasks[id];
+    console.log(checklistItemCompletion)
+
+    const dbref = firebase.database().ref(`/tasks/${id}`);
+
+    checklistItemCompletion.completed = checklistItemCompletion.completed === true ? false : true;
+    delete checklistItemCompletion[id];
+    dbref.set(checklistItemCompletion);
+    console.log(checklistItemCompletion);
+  }
 
 
     render() {
@@ -143,8 +121,10 @@ class App extends React.Component {
               <h3><span className="question">Still learning? </span>Draw a random flashcard to practice</h3>
               <Flashcard name={this.state.displayedTask.name} description={this.state.displayedTask.description}/>
               <FlashcardEvent showFlashcard={this.updateFlashcard}/>
+              <p className="cardNotes">Flashcard text adapted from the HackerYou Web Development notes. Accessibility does not end with these 18 tasks ... but it's a good place to start. </p>
             </div>
             <h3><span className="question">Project-Ready? </span> Check the tasks when complete</h3>
+            <p className="taskNotes">Remember: accessibility isn't an afterthought. Plan with these principles in mind.</p>
           </header>
           <main className="wrapper">
               <ul className="providedTasks">
@@ -153,27 +133,15 @@ class App extends React.Component {
                     <ProvidedTasks data={task} key={task.id} toggleCompleted={this.toggleCompleted}/>
                   )
                 })}
-              {/* <div>
-                <form onSubmit={this.addTask}>
-                  <input type="text" name="task" value={this.state.task} onChange={this.handleChange} />
-                  <button>Add New Accessibility Task</button>
-                </form>
-              </div> */}
               </ul>
-                  {/* {this.state.tasks.map((task, i) => {
-                    return <AddedTask data={task} key={`task-${i}`}/>
-                  })} */}
-                    {/* <AddedTasks data={task} key={task.id} toggleCompleted = {this.toggleCompleted} /> */}
           </main>
+          <footer>
+            <p>&copy; 2018 Natalie Van Dine </p>
+          </footer>
         </div>
       )
     }
 }
 
-// const AddedTask = (props) => {
-//   return (
-//     <li>{props.data}</li> 
-//   );
-// }
 
 ReactDOM.render(<App />, document.getElementById('app'));

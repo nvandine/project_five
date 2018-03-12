@@ -34,7 +34,24 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .cardNotes {
+        width: 55%;
+        margin-top: 30px;
+        text-align: center;
+        line-height: 1.6;
+    }
 }
+
+.taskNotes {
+    line-height: 1.6;
+    color: #6278ff;
+    text-align: center;
+    margin-bottom: 30px;
+    width: 55%;
+    
+
+}
+
 h3 {
     font-size: 2.1rem;
     margin: 20px auto;
@@ -80,14 +97,27 @@ header {
     justify-content: space-around;
 }
 
-.providedTasksContainer p {
-    font-family: 'Montserrat',sans-serif;
+.checkboxText {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+
+input[type=checkbox] {
+    margin-left: 10px;
 }
 
 li {
     list-style: none;
     text-align: center;
+    p {
+        // text-transform: uppercase;
+        color: #2f42be
+    }
 }
+
 
 button {
     background-color: #6278ff;
@@ -104,6 +134,15 @@ button:hover,
 button:focus {
     transform: scale(1.2);
 }
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    p {
+    font-size: 1.8rem;
+    }
+}
+
 
 /* MEDIA QUERIES */
 
