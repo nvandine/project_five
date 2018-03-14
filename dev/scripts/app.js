@@ -118,7 +118,7 @@ class App extends React.Component {
             <h1> <span className="titleFont">Accessibility </span>Checklist</h1>
             <p className="subhead">A starter guide to creating a barrier-free experience</p>
             <div className="learning">
-              <h3><span className="question">Still learning? </span>Draw a random flashcard to practice</h3>
+              <h3><span className="question">Still learning?  &nbsp;</span>Draw a random flashcard to practice</h3>
               <Flashcard name={this.state.displayedTask.name} description={this.state.displayedTask.description}/>
               <FlashcardEvent showFlashcard={this.updateFlashcard}/>
               <p className="cardNotes">Flashcard text adapted from the HackerYou Web Development notes. Accessibility does not end with these 18 tasks ... but it's a good place to start. </p>
