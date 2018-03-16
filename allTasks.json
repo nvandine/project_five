@@ -3,7 +3,7 @@
         {
             "id": 0,
             "name": "HTML: declaring language for site",
-            "description": "allows search engines to properly index your site; allows assistive technologies to pronounce content accurately", 
+            "description": "allows search engines to properly index site; allows assistive technologies to pronounce content accurately", 
             "completed": false
         },
         {   
